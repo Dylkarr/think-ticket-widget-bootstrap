@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Mi Agenda</h5>
-      <p class="card-text">Se mostrará la agenda del usuario. hola prueba actualizacion committ</p>
+      <p class="card-text">Se mostrará la agenda del usuario. hola prueba actualizacion committttt</p>
     </div>
   </div>
 </template>
