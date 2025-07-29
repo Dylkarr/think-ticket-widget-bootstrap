@@ -1,23 +1,23 @@
 <template>
-  <div class="card shadow-sm" style="max-width: 360px; width:100%;">
-    <div class="card-body">
-      <h4 class="card-title mb-3 text-center">Iniciar sesión</h4>
-      <form @submit.prevent="handleSubmit">
-        <div class="mb-3">
-          <label class="form-label">Correo</label>
-          <input v-model="email" type="email" class="form-control" placeholder="correo@example.com" :disabled="loading" required />
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Contraseña</label>
-          <input v-model="password" type="password" class="form-control" placeholder="••••••" :disabled="loading" required />
-        </div>
-        <button class="btn btn-primary w-100" :disabled="loading">
-          {{ loading ? 'Ingresando…' : 'Entrar' }}
-        </button>
-        <div v-if="error" class="alert alert-danger py-2 mt-3">{{ error }}</div>
-      </form>
-    </div>
-  </div>
+  <b-card class="shadow-sm" body-class="p-4" style="max-width:360px;">
+    <h4 class="mb-3 text-center">Iniciar sesión</h4>
+
+    <b-form @submit.prevent="handleSubmit" v-slot="{ validate }">
+      <b-form-group label="Correo" label-for="email">
+        <b-form-input id="email" v-model="email" type="email" required :disabled="loading"/>
+      </b-form-group>
+
+      <b-form-group label="Contraseña" label-for="password">
+        <b-form-input id="password" v-model="password" type="password" required :disabled="loading"/>
+      </b-form-group>
+
+      <b-button type="submit" variant="primary" class="w-100" :disabled="loading">
+        {{ loading ? 'Ingresando…' : 'Entrar' }}
+      </b-button>
+
+      <b-alert v-if="error" show variant="danger" class="mt-3">{{ error }}</b-alert>
+    </b-form>
+  </b-card>
 </template>
 
 <script setup lang="ts">
