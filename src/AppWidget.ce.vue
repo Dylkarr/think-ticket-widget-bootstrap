@@ -63,6 +63,14 @@ function logout() { store.logout(); view.value = 'tickets' }
 </script>
 
 <style scoped>
+/* @import 'bootstrap/dist/css/bootstrap.min.css';
+html,body { height: 100%; } */
+/* 1) Bootstrap 5 */
 @import 'bootstrap/dist/css/bootstrap.min.css';
-html,body { height: 100%; }
+
+/* 2) Bootstrap‑Vue Next (opcional pero recomendado) */
+@import 'bootstrap-vue-next/dist/bootstrap-vue-next.css';
+
+/* 3) Bootstrap‑Icons si los usas */
+@import 'bootstrap-icons/font/bootstrap-icons.css';
 </style>
