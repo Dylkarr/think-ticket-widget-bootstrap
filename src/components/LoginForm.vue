@@ -1,5 +1,5 @@
 <template>
-  <b-card class="auth-card shadow-sm">
+  <b-card class="auth-card shadow-sm pt-0">
     <h4 class="auth-title text-center mb-4">Iniciar sesión</h4>
 
     <b-form @submit.prevent="handleSubmit">
