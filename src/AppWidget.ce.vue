@@ -9,24 +9,24 @@
     </div>
 
     <!-- ───────────── DASHBOARD ───────────── -->
-    <b-sidebar
-      v-else
-      visible
-      shadow
-      backdrop
-      class="sidebar-custom bg-dark text-white"
-      style="width: 220px"
-      no-header
-    >
+    <b-sidebar v-else visible shadow backdrop class="sidebar-custom bg-dark text-white" style="width: 220px" no-header>
+
       <template #default>
         <ul class="nav flex-column">
+          <li class="nav-item text-center">
+            <h2>
+              Postventa
+            </h2>
+          </li>
+        <hr class="border-secondary my-4" />
+
           <li class="nav-item">
             <b-link
               class="nav-link"
               :class="{ active: view === 'tickets' }"
               @click="view = 'tickets'"
             >
-              <i class="bi bi-ticket-perforated me-2"></i>Mis Tickets
+              Mis Tickets
             </b-link>
           </li>
           <li class="nav-item">
@@ -35,7 +35,7 @@
               :class="{ active: view === 'create' }"
               @click="view = 'create'"
             >
-              <i class="bi bi-plus-circle me-2"></i>Crear Ticket
+              Crear Ticket
             </b-link>
           </li>
           <li class="nav-item">
@@ -44,7 +44,7 @@
               :class="{ active: view === 'agenda' }"
               @click="view = 'agenda'"
             >
-              <i class="bi bi-calendar-event me-2"></i>Mi Agenda
+              Mi Agenda
             </b-link>
           </li>
         </ul>
@@ -52,9 +52,10 @@
         <hr class="border-secondary my-4" />
 
         <b-button size="sm" variant="outline-light" class="w-100" @click="logout">
-          <i class="bi bi-box-arrow-right me-2"></i>Salir
+          Salir
         </b-button>
       </template>
+
     </b-sidebar>
 
     <main v-if="authed" class="content-area flex-grow-1">
@@ -72,6 +73,10 @@ import LoginForm from './components/LoginForm.vue'
 import TicketsPlaceholder from './components/TicketsPlaceholder.vue'
 import CreateTicketPlaceholder from './components/CreateTicketPlaceholder.vue'
 import AgendaPlaceholder from './components/AgendaPlaceholder.vue'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-vue-next/dist/bootstrap-vue-next.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
 
 const store = useStore()
 const authed = computed(() => !!store.user.value)
